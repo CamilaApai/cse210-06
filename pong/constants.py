@@ -41,10 +41,10 @@ WHITE = Color(255, 255, 255)
 PURPLE = Color(255, 0, 255)
 
 # KEYS
-UP = "up"
-UP2 = "w"
-DOWN = "down"
-DOWN2 = "s"
+UP2 = "up"
+UP = "w"
+DOWN2 = "down"
+DOWN = "s"
 SPACE = "space"
 ENTER = "enter"
 PAUSE = "p"
@@ -81,7 +81,7 @@ RELEASE = 6
 STATS_GROUP1 = "stats1"
 STATS_GROUP2 = "stats2"
 #DEFAULT_LIVES = 3
-#MAXIMUM_LIVES = 5
+MAXIMUM_ROUND = 11
 
 # HUD
 HUD_MARGIN = 15

@@ -14,7 +14,7 @@ class Stats(Actor):
     def add_life(self):
         pass
 
-    def add_points(self, points):
+    def add_points(self):
         """Adds the given points to the score.
         
         Args:
