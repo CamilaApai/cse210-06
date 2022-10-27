@@ -10,7 +10,6 @@ from game.casting.racket import Racket
 from game.casting.stats import Stats
 from game.casting.text import Text 
 from game.scripting.change_scene_action import ChangeSceneAction
-from game.scripting.check_over_action import CheckOverAction
 from game.scripting.collide_borders_action import CollideBordersAction
 from game.scripting.collide_racket_action import CollideRacketAction
 from game.scripting.control_racket_action import ControlRacketAction
@@ -41,7 +40,6 @@ class SceneManager:
     KEYBOARD_SERVICE = RaylibKeyboardService()
     PHYSICS_SERVICE = RaylibPhysicsService()
     VIDEO_SERVICE = RaylibVideoService(GAME_NAME, SCREEN_WIDTH, SCREEN_HEIGHT)
-    CHECK_OVER_ACTION = CheckOverAction()
     COLLIDE_BORDERS_ACTION = CollideBordersAction(PHYSICS_SERVICE, AUDIO_SERVICE)
     COLLIDE_RACKET_ACTION = CollideRacketAction(PHYSICS_SERVICE, AUDIO_SERVICE)
     CONTROL_RACKET_ACTION = ControlRacketAction(KEYBOARD_SERVICE)
@@ -78,6 +76,7 @@ class SceneManager:
     # ----------------------------------------------------------------------------------------------
     
     def _prepare_new_game(self, cast, script):
+        self._add_stats(cast)
         self._add_stats(cast)
         self._add_level(cast)
         self._add_lives(cast)
@@ -191,12 +190,18 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(ROUND_GROUP, label)
 
+        #cast.clear_actors(ROUND_GROUP[1])
+        #text2 = Text(ROUND_FORMAT[1], FONT_FILE, FONT_SMALL, ALIGN_CENTER)
+        #position2 = Point(CENTER_X, HUD_MARGIN)
+        #label2 = Label(text2, position2)
+        #cast.add_actor(ROUND_GROUP[1], label2)
+
     def _add_stats(self, cast):
-        cast.clear_actors(STATS_GROUP)
-        cast.clear_actors(STATS_GROUP2)
-        stats = Stats()
+        stats1 = Stats()
         stats2 = Stats()
-        cast.add_actor(STATS_GROUP, stats)
+        cast.clear_actors(STATS_GROUP1)
+        cast.clear_actors(STATS_GROUP2)
+        cast.add_actor(STATS_GROUP1, stats1)
         cast.add_actor(STATS_GROUP2, stats2)
 
     def _add_racket(self, cast):
