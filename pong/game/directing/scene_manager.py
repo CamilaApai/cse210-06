@@ -144,22 +144,21 @@ class SceneManager:
         cast.clear_actors(BALL_GROUP)
         size = Point(BALL_WIDTH, BALL_HEIGHT)
         velocity = Point(0, 0)
- 
-        y = CENTER_Y - BALL_WIDTH / 2
-        x = SCREEN_WIDTH - RACKET_HEIGHT - BALL_HEIGHT  
+        y = CENTER_Y - BALL_HEIGHT
+        x = CENTER_X - BALL_WIDTH
         position = Point(x, y)
         body = Body(position, size, velocity)
         image = Image(BALL_IMAGE)
         ball = Ball(body, image, True)
         cast.add_actor(BALL_GROUP, ball)
 
-        y2 = CENTER_X - BALL_WIDTH / 2
-        x2 = SCREEN_HEIGHT - RACKET_HEIGHT - BALL_HEIGHT  
-        position2 = Point(x2, y2)
-        body2 = Body(position2, size, velocity)
-        image2 = Image(BALL_IMAGE)
-        ball2 = Ball(body2, image2, True)
-        cast.add_actor(BALL_GROUP, ball2)
+        #y2 = CENTER_X - BALL_WIDTH / 2
+        #x2 = SCREEN_HEIGHT - RACKET_HEIGHT - BALL_HEIGHT  
+        #position2 = Point(x2, y2)
+        #body2 = Body(position2, size, velocity)
+        #image2 = Image(BALL_IMAGE)
+        #ball2 = Ball(body2, image2, True)
+        #cast.add_actor(BALL_GROUP, ball2)
 
     def _add_dialog(self, cast, message):
         cast.clear_actors(DIALOG_GROUP)
