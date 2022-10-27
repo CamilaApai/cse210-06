@@ -21,8 +21,9 @@ class CollideBordersAction(Action):
 
         stats1 = cast.get_first_actor(STATS_GROUP1)
         stats2 = cast.get_first_actor(STATS_GROUP2)
-        
+                
         if x <= FIELD_LEFT:
+
             stats1.next_level()
             stats2.add_points()
 
@@ -33,6 +34,7 @@ class CollideBordersAction(Action):
                 callback.on_next(TRY_AGAIN) 
                 
         elif x >= (FIELD_RIGHT - BALL_WIDTH):
+            #points = racket.get_points()
             stats1.next_level()
             stats1.add_points()
 

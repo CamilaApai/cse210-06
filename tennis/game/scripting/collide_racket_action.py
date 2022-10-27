@@ -13,10 +13,10 @@ class CollideRacketAction(Action):
         ball = cast.get_first_actor(BALL_GROUP)
         ball_body = ball.get_body()
 
-        racket = cast.get_actors(RACKET_GROUP[0])
+        racket = cast.get_actors(RACKET_GROUP)[0]
         racket_body = racket.get_body()
         
-        racket2 = cast.get_actors(RACKET_GROUP[1])
+        racket2 = cast.get_actors(RACKET_GROUP)[1]
         racket_body2 = racket2.get_body()
 
         if self._physics_service.has_collided(ball_body, racket_body):

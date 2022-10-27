@@ -150,6 +150,14 @@ class SceneManager:
         ball = Ball(body, image, True)
         cast.add_actor(BALL_GROUP, ball)
 
+        #y2 = CENTER_X - BALL_WIDTH / 2
+        #x2 = SCREEN_HEIGHT - RACKET_HEIGHT - BALL_HEIGHT  
+        #position2 = Point(x2, y2)
+        #body2 = Body(position2, size, velocity)
+        #image2 = Image(BALL_IMAGE)
+        #ball2 = Ball(body2, image2, True)
+        #cast.add_actor(BALL_GROUP, ball2)
+
     def _add_dialog(self, cast, message):
         cast.clear_actors(DIALOG_GROUP)
         text = Text(message, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
@@ -157,7 +165,7 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(DIALOG_GROUP, label)
 
-
+#modify names
     def _add_level(self, cast):
         cast.clear_actors(SCORE1_GROUP)
         text = Text(SCORE1_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_LEFT)
@@ -242,7 +250,7 @@ class SceneManager:
         script.add_action(UPDATE, self.MOVE_BALL_ACTION)
         script.add_action(UPDATE, self.MOVE_RACKET_ACTION)
         script.add_action(UPDATE, self.COLLIDE_BORDERS_ACTION)
-        #script.add_action(UPDATE, self.COLLIDE_RACKET_ACTION)
+        script.add_action(UPDATE, self.COLLIDE_RACKET_ACTION)
         script.add_action(UPDATE, self.MOVE_RACKET_ACTION)
        
 
