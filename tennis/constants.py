@@ -85,9 +85,9 @@ MAXIMUM_ROUND = 15
 # HUD
 HUD_MARGIN = 15
 SCORE1_GROUP = "score1"
-SCORE1_FORMAT = "SCORE 1: {}"
+SCORE1_FORMAT = "Player 1: {}"
 SCORE2_GROUP = "score2"
-SCORE2_FORMAT = "SCORE 2: {}"
+SCORE2_FORMAT = "Player 2: {}"
 ROUND_GROUP = "round"
 ROUND_FORMAT = "Round: {}"
 

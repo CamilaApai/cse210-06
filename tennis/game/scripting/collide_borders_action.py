@@ -23,7 +23,6 @@ class CollideBordersAction(Action):
         stats2 = cast.get_first_actor(STATS_GROUP2)
                 
         if x <= FIELD_LEFT:
-
             stats1.next_level()
             stats2.add_points()
 
@@ -34,7 +33,6 @@ class CollideBordersAction(Action):
                 callback.on_next(TRY_AGAIN) 
                 
         elif x >= (FIELD_RIGHT - BALL_WIDTH):
-            #points = racket.get_points()
             stats1.next_level()
             stats1.add_points()
 
@@ -46,10 +44,8 @@ class CollideBordersAction(Action):
 
         if y < FIELD_TOP:
             ball.bounce_y()
-            self._audio_service.play_sound(bounce_sound)
 
         elif y >= (FIELD_BOTTOM - BALL_WIDTH):
             ball.bounce_y()
-            self._audio_service.play_sound(bounce_sound)
            
         

@@ -78,9 +78,9 @@ class SceneManager:
     def _prepare_new_game(self, cast, script):
         self._add_stats(cast)
         self._add_stats(cast)
-        self._add_level(cast)
-        self._add_lives(cast)
-        self._add_score(cast)
+        self.add_round1(cast)
+        self.add_round2(cast)
+        self.add_round(cast)
         self._add_ball(cast)
         self._add_racket(cast)
         self._add_dialog(cast, ENTER_TO_START)
@@ -150,14 +150,6 @@ class SceneManager:
         ball = Ball(body, image, True)
         cast.add_actor(BALL_GROUP, ball)
 
-        #y2 = CENTER_X - BALL_WIDTH / 2
-        #x2 = SCREEN_HEIGHT - RACKET_HEIGHT - BALL_HEIGHT  
-        #position2 = Point(x2, y2)
-        #body2 = Body(position2, size, velocity)
-        #image2 = Image(BALL_IMAGE)
-        #ball2 = Ball(body2, image2, True)
-        #cast.add_actor(BALL_GROUP, ball2)
-
     def _add_dialog(self, cast, message):
         cast.clear_actors(DIALOG_GROUP)
         text = Text(message, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
@@ -165,22 +157,21 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(DIALOG_GROUP, label)
 
-#modify names
-    def _add_level(self, cast):
+    def add_round1(self, cast):
         cast.clear_actors(SCORE1_GROUP)
         text = Text(SCORE1_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_LEFT)
         position = Point(HUD_MARGIN, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(SCORE1_GROUP, label)
 
-    def _add_lives(self, cast):
+    def add_round2(self, cast):
         cast.clear_actors(SCORE2_GROUP)
         text = Text(SCORE2_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_RIGHT)
         position = Point(SCREEN_WIDTH - HUD_MARGIN, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(SCORE2_GROUP, label)
 
-    def _add_score(self, cast):
+    def add_round(self, cast):
         cast.clear_actors(ROUND_GROUP)
         text = Text(ROUND_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
         position = Point(CENTER_X, HUD_MARGIN)
