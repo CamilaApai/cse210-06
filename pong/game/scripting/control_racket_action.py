@@ -17,7 +17,8 @@ class ControlRacketAction(Action):
         else: 
             racket.stop_moving()       
 
-        racket2 = cast.get_second_actor(RACKET_GROUP)
+        #racket2 = cast.get_second_actor(RACKET_GROUP)
+        racket2 = cast.get_actors(RACKET_GROUP[1])
         if self._keyboard_service.is_key_down(UP2): 
             racket2.swing_up()
         elif self._keyboard_service.is_key_down(DOWN2): 

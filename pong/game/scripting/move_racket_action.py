@@ -9,7 +9,8 @@ class MoveRacketAction(Action):
         pass
 
     def execute(self, cast, script, callback):
-        racket = cast.get_first_actor(RACKET_GROUP)
+        #racket = cast.get_first_actor(RACKET_GROUP)
+        racket = cast.get_actors(RACKET_GROUP[0])
         body = racket.get_body()
         velocity = body.get_velocity()
         position = body.get_position()
@@ -24,7 +25,8 @@ class MoveRacketAction(Action):
 
         body.set_position(position)
 
-        racket2 = cast.get_second_actor(RACKET_GROUP)
+        #racket2 = cast.get_second_actor(RACKET_GROUP)
+        racket2 = cast.get_actors(RACKET_GROUP[1])
         body2 = racket2.get_body()
         velocity2 = body2.get_velocity()
         position2 = body2.get_position()

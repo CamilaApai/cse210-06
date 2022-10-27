@@ -215,7 +215,6 @@ class SceneManager:
         animation = Animation(RACKET_IMAGES, RACKET_RATE)
         racket = Racket(body, animation)
         cast.add_actor(RACKET_GROUP, racket)
-        cast.add_actor(RACKET_GROUP, racket)
 
         x2 = 0
         y2 = CENTER_Y - RACKET_WIDTH / 2
@@ -223,7 +222,7 @@ class SceneManager:
         size2 = Point(RACKET_HEIGHT, RACKET_WIDTH)
         velocity2 = Point(0, 0)
         body2 = Body(position2, size2, velocity2)
-        animation2 = Animation(RACKET_IMAGES, RACKET_RATE)
+        animation2 = Animation(RACKET2_IMAGES, RACKET_RATE)
         racket2 = Racket(body2, animation2)
         cast.add_actor(RACKET_GROUP, racket2)
 
