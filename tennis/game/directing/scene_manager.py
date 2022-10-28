@@ -78,8 +78,8 @@ class SceneManager:
     def _prepare_new_game(self, cast, script):
         self._add_stats(cast)
         self._add_stats(cast)
-        self.add_round1(cast)
-        self.add_round2(cast)
+        self.add_score1(cast)
+        self.add_score2(cast)
         self.add_round(cast)
         self._add_ball(cast)
         self._add_racket(cast)
@@ -124,8 +124,6 @@ class SceneManager:
         self._add_ball(cast)
         self._add_racket(cast)
         self._add_dialog(cast, WAS_GOOD_GAME)
-        self._add_dialog(cast, THANK_YOU)
-
         script.clear_actions(INPUT)
         script.add_action(INPUT, TimedChangeSceneAction(NEW_GAME, 5))
         script.clear_actions(UPDATE)
@@ -158,14 +156,14 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(DIALOG_GROUP, label)
 
-    def add_round1(self, cast):
+    def add_score1(self, cast):
         cast.clear_actors(SCORE1_GROUP)
         text = Text(SCORE1_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_LEFT)
         position = Point(HUD_MARGIN, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(SCORE1_GROUP, label)
 
-    def add_round2(self, cast):
+    def add_score2(self, cast):
         cast.clear_actors(SCORE2_GROUP)
         text = Text(SCORE2_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_RIGHT)
         position = Point(SCREEN_WIDTH - HUD_MARGIN, HUD_MARGIN)

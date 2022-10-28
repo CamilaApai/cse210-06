@@ -9,7 +9,7 @@ GAME_NAME = "tennis"
 FRAME_RATE = 60
 
 # SCREEN
-SCREEN_WIDTH = 1040
+SCREEN_WIDTH = 1100
 SCREEN_HEIGHT = 680
 CENTER_X = SCREEN_WIDTH / 2
 CENTER_Y = SCREEN_HEIGHT / 2
@@ -56,10 +56,6 @@ NEXT_LEVEL = 2
 IN_PLAY = 3
 GAME_OVER = 4
 
-# LEVELS
-LEVEL_FILE = "assets/data/level-{:03}.txt"
-BASE_LEVELS = 5
-
 # -------------------------------------------------------------------------------------------------- 
 # SCRIPTING CONSTANTS
 # -------------------------------------------------------------------------------------------------- 
@@ -80,7 +76,7 @@ RELEASE = 6
 # STATS
 STATS_GROUP1 = "stats1"
 STATS_GROUP2 = "stats2"
-MAXIMUM_ROUND = 15
+MAXIMUM_ROUND = 5
 
 # HUD
 HUD_MARGIN = 15
@@ -96,20 +92,20 @@ BALL_GROUP = "balls"
 BALL_IMAGE = "assets/images/000.png"
 BALL_WIDTH = 28
 BALL_HEIGHT = 28
-BALL_VELOCITY = 6
+BALL_VELOCITY = 7
 
 # RACKET
 RACKET_GROUP = "rackets"
 RACKET_IMAGES = [f"assets/images/{n:03}.png" for n in range(100, 102)]
 RACKET2_IMAGES = [f"assets/images/{n:03}.png" for n in range(103, 105)]
 RACKET_WIDTH = 106
-RACKET_HEIGHT = 28
+RACKET_HEIGHT = 100
 RACKET_RATE = 6
 RACKET_VELOCITY = 7
 
 # DIALOG
 DIALOG_GROUP = "dialogs"
 ENTER_TO_START = "PRESS ENTER TO START"
-PREP_TO_LAUNCH = "PREPARING TO LAUNCH"
+PREP_TO_LAUNCH = "PREPARING THE GAME"
 WAS_GOOD_GAME = "GAME OVER"
-THANK_YOU = "Thanks for playing, play again if you wish!"
+
