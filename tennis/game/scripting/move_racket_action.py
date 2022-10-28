@@ -22,6 +22,7 @@ class MoveRacketAction(Action):
             position = Point(position.get_x(), SCREEN_HEIGHT - RACKET_HEIGHT)
         body.set_position(position)
 
+        #Code for the second racket
         racket2 = cast.get_actors(RACKET_GROUP)[1]
         body2 = racket2.get_body()
         velocity2 = body2.get_velocity()

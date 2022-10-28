@@ -1,5 +1,5 @@
 # tennis
-Tennis is a multiplayer game, based on the sports arcade video game that has the same name. 
+Tennis is a multiplayer game, based on the sports arcade video game that has the same name. There are two players, Player one uses the "w" and "s" keyboards shortcuts to play the game, and Player two uses the "up" and "down" keyboard shortcuts. The players must try to hit the ball, and while both players can do this, the round will continue. However, when a player doesn't hit the ball, the rival wins a point and that round ends. There are fifteen rounds, and the game ends when the players reach the last round, and the player with the most points wins the game.
 
 ## Getting Started
 ---

@@ -84,8 +84,6 @@ class Cast:
             result = self._actors[group][1]
         return result
 
-
-
     def remove_actor(self, group, actor):
         """Removes an actor from the given group.
         

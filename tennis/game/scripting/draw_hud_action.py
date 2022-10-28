@@ -10,8 +10,6 @@ class DrawHudAction(Action):
     def execute(self, cast, script, callback):
         stats1 = cast.get_first_actor(STATS_GROUP1)
         stats2 = cast.get_first_actor(STATS_GROUP2)
-        #stats1 = cast.get_actors(STATS_GROUP1[0])
-        #stats2 = cast.get_actors(STATS_GROUP2[1])
         self._draw_label(cast, SCORE1_GROUP, SCORE1_FORMAT, stats1.get_score())
         self._draw_label(cast, SCORE2_GROUP, SCORE2_FORMAT, stats2.get_score())
         self._draw_label(cast, ROUND_GROUP, ROUND_FORMAT, stats1.get_level())

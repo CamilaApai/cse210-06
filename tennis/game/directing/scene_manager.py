@@ -124,6 +124,7 @@ class SceneManager:
         self._add_ball(cast)
         self._add_racket(cast)
         self._add_dialog(cast, WAS_GOOD_GAME)
+        self._add_dialog(cast, THANK_YOU)
 
         script.clear_actions(INPUT)
         script.add_action(INPUT, TimedChangeSceneAction(NEW_GAME, 5))
@@ -198,6 +199,7 @@ class SceneManager:
         racket = Racket(body, animation)
         cast.add_actor(RACKET_GROUP, racket)
 
+        #Code for the second racket
         x2 = 0
         y2 = CENTER_Y - RACKET_WIDTH / 2
         position2 = Point(x2, y2)

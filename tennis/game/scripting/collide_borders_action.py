@@ -16,17 +16,16 @@ class CollideBordersAction(Action):
 
         x = position.get_x()
         y = position.get_y()
-        bounce_sound = Sound(BOUNCE_SOUND)
         over_sound = Sound(OVER_SOUND)
 
         stats1 = cast.get_first_actor(STATS_GROUP1)
         stats2 = cast.get_first_actor(STATS_GROUP2)
                 
-        if x <= FIELD_LEFT:
+        if x < FIELD_LEFT:
             stats1.next_level()
             stats2.add_points()
 
-            if stats1.get_level() >= MAXIMUM_ROUND:
+            if stats1.get_level() > MAXIMUM_ROUND:
                 callback.on_next(GAME_OVER) 
                 self._audio_service.play_sound(over_sound)
             else:

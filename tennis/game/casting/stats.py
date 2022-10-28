@@ -10,10 +10,7 @@ class Stats(Actor):
         super().__init__(debug)
         self._level = 1
         self._score = 0
-
-    def add_life(self):
-        pass
-
+ 
     def add_points(self):
         """Adds the given points to the score.
         
@@ -30,8 +27,6 @@ class Stats(Actor):
         """
         return self._level
 
-    def get_lives(self):
-        pass
   
     def get_score(self):
         """Gets the score.
@@ -41,10 +36,6 @@ class Stats(Actor):
         """
         return self._score
 
-    def lose_life(self):
-        """Removes one life."""
-        pass
-    
     def next_level(self):
         """Adds one level."""
         self._level += 1
